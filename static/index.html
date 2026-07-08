@@ -4,8 +4,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>logistics-bits — route optimizer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p>Route optimizer UI coming up.</p>
+  <div id="map"></div>
+
+  <aside id="panel">
+    <h1>Route Optimizer</h1>
+    <p class="sub">1 driver · 10 stops · real drive times via OSRM · Google OR-Tools TSP</p>
+
+    <div class="buttons">
+      <button id="optimize">Optimize route</button>
+      <button id="shuffle" class="secondary">Shuffle stops</button>
+    </div>
+
+    <div id="stats" hidden>
+      <div class="stat"><span id="stat-time">–</span><label>drive time</label></div>
+      <div class="stat"><span id="stat-dist">–</span><label>distance</label></div>
+      <div class="stat"><span id="stat-saved">–</span><label>vs. naive order</label></div>
+    </div>
+
+    <p id="status">Drag any pin (even the depot), then optimize.</p>
+  </aside>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
 </body>
 </html>
