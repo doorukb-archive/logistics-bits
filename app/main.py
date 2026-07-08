@@ -52,6 +52,7 @@ async def optimize(req: OptimizeRequest):
 
     return {
         "order": order,
+        "optimized_seconds": optimized,
         "total_seconds": duration,
         "naive_seconds": naive,
         "distance_meters": distance,
